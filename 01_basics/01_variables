@@ -29,7 +29,8 @@ Note:
     now in modern js we only use let and const. but in some old code there was use of var variable but not now because when we use var variable there was issue in block scope and function scope.
 */
 
-/* if you doesn't know what is scope let assume for now semi-bracket 
+/* 
+    if you doesn't know what is scope let assume for now semi-bracket 
 {
     scope
 }
