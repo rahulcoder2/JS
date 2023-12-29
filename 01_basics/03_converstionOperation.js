@@ -59,17 +59,46 @@ const stringValue = String(valueNB)
 
 let value = 5
 const negValue = -value
-console.log(negValue);
+// console.log(negValue);
 
-console.log(2+2);
-console.log(2-2);
-console.log(2*2);
-console.log(2**5); //power
-console.log(2/2);
-console.log(3%2);
+// console.log(2+2);
+// console.log(2-2);
+// console.log(2*2);
+// console.log(2**5); //power
+// console.log(2/2);
+// console.log(3%2);
 
 let str1 = "rahul"
 let str2 = " Chaudhary"
 
-const str3 = str1 + str2
-console.log(str3);
+// const str3 = str1 + str2
+// console.log(str3);
+
+// console.log("1" + 2); //12
+// console.log(2 + "1"); // 21
+// console.log(2 + 3 + "2"); //ans 52
+// console.log("2" + 2 + 3); //ans 223
+
+/*
+    it is because Rule of Primitive type which is in is link you can check in full detail how it work :
+    https://tc39.es/ecma262/#sec-abstract-operations
+*/
+
+/*
+    Note:
+        don't use this type to code 
+        console.log(3+2*5%3);
+        console.log(+true);
+        console.log(+"");
+        
+        let num1, num2, num3
+        
+        num1 = num2 = num3 = 5 + 3
+*/
+
+// Let make small gamecounter which start at 100 and increment it 
+
+let gamecounter = 100
+gamecounter++;
+console.log(gamecounter);
+
