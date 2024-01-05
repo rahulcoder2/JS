@@ -109,3 +109,61 @@ function defaultParameter (userName = "defaultUser"){
 
 // console.log("defaultParameter = ", defaultParameter()) 
 // console.log("overWriteParameter = ", defaultParameter("rahul")) 
+
+
+// ++++++ let learn now other type of parameter in function +++++
+
+//let assume you are making shoping card you want to add new product repeatly.but you don't know how many product will add.
+
+function addProductCart (...productName) {
+ return productName  
+}
+
+// Now Let assume you want to add productname more than 2 
+// console.log(addProductCart('t-shirt', 'shirt')) // ans t-shirt 
+
+// so here come concept of rest which is simiary to spread (...productName)
+// console.log(addProductCart('t-shirt', 'shirt'))  //come in array form [ 't-shirt', 'shirt' ]
+ 
+
+// passing object in function
+
+const user = {
+    userName: "rahul",
+    email: "example@gmail.com"
+}
+
+function objectPassingInFunction (userInfo){
+    console.log(`userName= ${userInfo.userName} and email = ${userInfo.email}`)
+    return userInfo
+}
+
+// 1st Way 
+// console.log(objectPassingInFunction(user))
+
+// 2nd Way
+// console.log(objectPassingInFunction({
+//     userName: "Tom",
+//     email: "Tom@gmail.com"
+// }))
+
+
+// passing Array in function
+
+const userdB = [
+    'Rahul',
+    'example@gmail.com'
+]
+
+function arrayPassingInFunction (userinformation){
+    return userinformation
+}
+// 1st way
+// console.log(arrayPassingInFunction(userdB))
+
+// 2nd way
+// console.log(arrayPassingInFunction([
+//     150,
+//     200,
+//     300
+// ]))
