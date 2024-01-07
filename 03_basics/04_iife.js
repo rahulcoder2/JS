@@ -3,7 +3,7 @@
 */
 
 /*
-there is problem due to pollution of global scope. many time, we have to throw it.So, to remove the pollution of the variable of global scope and whatever declaration is there. SO we used iife
+there is problem due to pollution of global scope. many time, we have to throw it.So, to remove the pollution of the variable of global scope and whatever declaration is there. SO we used iife to Immediately Invoked.
     Note: It executed immediately 
 */
 
