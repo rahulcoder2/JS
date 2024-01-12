@@ -49,6 +49,9 @@ for (let i = 0; i < myArray.length; i++) {
     const element = myArray[i];
     // console.log(element)
 }
+/*
+    Note: this is not best way to use loop in array there is other loop which is use for array we will learn later in topic.
+*/
 
 //   keyword in loop (break and continue)
 
