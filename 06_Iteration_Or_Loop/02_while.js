@@ -10,11 +10,11 @@
 
 // }
 
-let i = 1;
-while (i <= 10) {
-  // console.log(`odd number ${i}`)
-  i = i + 2;
-}
+// let i = 1;
+// while (i <= 10) {
+//   // console.log(`odd number ${i}`)
+//   i = i + 2;
+// }
 
 // now let see if condition inside while loop
 
