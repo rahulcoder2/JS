@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning DOM</title>
+    <style>
+        body{
+            background-color: #010101;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div >
+        <h1 id="title" class="heading">
+            Learning Dom <span style="display: none;">Hidden Text</span>
+        </h1>
+        <h2>1</h2>
+        <h2>2</h2>
+        <h2>3</h2>
+        <input type="password">
+        <p>Lorem ipsum dolor sit amet.</p>
+        <ul>
+            <li class="li-item">1</li>
+            <li class="li-item">2</li> 
+            <li class="li-item">3</li>
+        </ul>
+        
+    </div>
+    
+    <script>
+        const elementById = document.getElementById('title')
+
+        const id = elementById.id
+        // console.log(id)
+
+        const className = elementById.className
+        // console.log(className)
+
+        const getAttribute = elementById.getAttribute('class')
+        // console.log(getAttribute)
+
+        // Note: it allow overWrite value to setAttrubute check element to see change.
+        // const setAttribute = elementById.setAttribute('class', " firstHeading, test")
+        // console.log(setAttribute)
+
+        // const style = elementById.style.textAlign = 'center'
+        // console.log(style)
+
+         const backgroundcolor = elementById.style.backgroundColor = 'darkblue'
+        //  console.log(backgroundcolor)
+
+        // let first how to access context 
+        /*
+            Note: innerHTML show all html tag and content, innerContext show hidden content but not html tag, innerText only show context which is present in webpage
+        */
+        let context = elementById.innerHTML
+            context = elementById.textContent
+            context = elementById.innerText
+        // console.log(context)
+
+        // add context or change 
+        /*
+            Note: it will overWrite pervious value
+        */
+        // const changeContext = elementById.innerHTML = "Hello world"
+        // // console.log(changeContext)
+
+        // querySelector
+
+        const selectFirstOnly = document.querySelector('h2')
+        // console.log(selectFirstOnly)
+
+        //some example in different class and tag
+
+        const input = document.querySelector('input[type="password"]')
+        // console.log(input)
+
+        const ul = document.querySelector('ul')
+
+        const li = document.querySelector('li')
+
+        // const firstLi = li.style.color = 'red'
+        // console.log(firstLi)
+
+        // querySelectorALL
+
+        const selectAlltag = document.querySelectorAll('h2')
+        // console.log(selectAlltag)
+
+        const selectNodeListofLi = document.querySelectorAll('li')
+        // console.log(selectNodeListofLi)
+
+        // access nodeList of HTML
+
+        const select2NodeListofLi = selectNodeListofLi[1].style.backgroundColor = "gray"
+        // console.log(select2NodeListofLi)
+
+        const bgChangeforAll = selectNodeListofLi.forEach((item)=>(
+            item.style.backgroundColor=" blue"
+        ))
+
+        // HTML COllection
+        /*
+            Note: can't loop in html collection so we have to convert in array 
+        */
+
+        const HtmlCollectionofLi = document.getElementsByClassName('li-item')
+        // console.log(HtmlCollectionofLi)
+
+        // convert into array
+
+        const convertedHtmlCollection = Array.from(HtmlCollectionofLi)
+        // console.log(convertedHtmlCollection)
+
+        // now let access convertedHTMLCollection and change color and other 
+
+        const changeStyle = convertedHtmlCollection.forEach((i)=>{
+            i.style.color = "yellow";
+            i.style.padding = '15px';
+            i.style.backgroundColor = "green";
+        })
+
+    </script>
+</body>
+</html> 
