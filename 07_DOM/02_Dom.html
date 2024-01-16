@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent and Children in js part 2 basic</title>
+    <style>
+        body{
+            background-color: #010101;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="day">sunday</div>
+        <div class="day">monday</div>
+        <div class="day">thuesday</div>
+        <div class="day">wednesday</div>
+    </div>
+
+    <script>
+        const parent = document.querySelector('.parent')
+        // console.log(parent);
+        // access html collection
+        // console.log(parent.children);
+
+        // let access element 
+
+        // console.log(parent.children[2].innerHTML)
+
+        // for loop we have to convert into array or using loop 
+
+        for (let i = 0; i < parent.children.length; i++) {
+            const element = parent.children[i].innerHTML;
+            // console.log(element)
+        }
+
+        // let other property of parent
+
+        console.log(parent.firstElement)
+
+    </script>
+
+</body>
+</html>
