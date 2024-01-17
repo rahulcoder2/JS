@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add, edit and delete using js </title>
+</head>
+<body style="background-color: #010101; color: #fff;">
+    <h1> Add editing delete</h1>
+    <ul class="languages">
+        <li>JavaScript</li>
+    </ul>
+    <script>
+        // basic way logic
+        function addLanguage(langName) {
+           const li = document.createElement('li')
+           li.innerHTML =   `${langName}`
+           document.querySelector('.languages').appendChild(li)
+        }
+
+        addLanguage("Python")
+
+        // optimized way logic or dsa way
+        function addOpticLanguage (langName){
+            const li = document.createElement('li')
+            li.appendChild(document.createTextNode(langName))
+            document.querySelector(".languages").appendChild(li)
+        }
+
+        addOpticLanguage("java")
+
+        //Editing 
+
+        function editLanguage(selectnum,langName) {
+            const selectlanguage = document.querySelector(`li:nth-child(${selectnum})`)
+            const newLi = document.createElement('li')
+            newLi.appendChild(document.createTextNode(langName))
+            selectlanguage.replaceWith(newLi)
+        }
+        editLanguage(2, "C++")
+        editLanguage(3, "Python")
+
+        // removing
+
+        function removeLanguage(selectnum) {
+            const selectlanguage = document.querySelector(`li:nth-child(${selectnum})`)
+            selectlanguage.remove()
+        }
+        removeLanguage(2)
+
+    </script>
+</body>
+</html>
