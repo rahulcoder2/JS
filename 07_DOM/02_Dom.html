@@ -13,6 +13,8 @@
 </head>
 <body>
     <div class="parent">
+
+        <!-- this is comment -->
         <div class="day">sunday</div>
         <div class="day">monday</div>
         <div class="day">thuesday</div>
@@ -36,9 +38,28 @@
             // console.log(element)
         }
 
-        // let other property of parent
+        // parent to child
 
-        console.log(parent.firstElement)
+        // console.log(parent.firstElementChild)
+        // console.log(parent.lastElementChild)
+
+        // child to parent
+
+        const dayOne = document.querySelector('.day')
+
+        // console.log(dayOne) // child
+        // console.log(dayOne.nextElementSibling) // next child to parent 
+        // console.log(dayOne.parentElement) // parent value
+
+
+        // NodeList
+        /*
+            Note:
+                1.Show nodelist how it work 
+                2.it will only note one enter line if to enter two or more.but if you add comment or text it will count.
+        */
+
+        console.log(parent.childNodes)
 
     </script>
 
