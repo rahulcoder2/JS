@@ -14,7 +14,6 @@
 ## Project 1(Color Changer)
 
 ```javascipt
-
 const buttons = document.querySelectorAll(".button");
 const body = document.querySelector("body");
 
@@ -42,10 +41,9 @@ buttons.forEach((button) =>
 
 ```
 
-Poject 2 (BMI Calculator)
+## Project 2 (BMI Calculator)
 
 ```Javascipt
-
 const form = document.querySelector('form');
 
 // usecase when need empty value 
@@ -75,6 +73,15 @@ form.addEventListener('submit', (e) => {
   }
 });
 
+```
 
+## Project 3 (DigitalClock)
+
+```javascript
+const clock = document.querySelector("#clock")
+setInterval(()=>{
+  let time = new Date()
+  clock.innerHTML = time.toLocaleTimeString()
+}, 1000)
 
 ```
