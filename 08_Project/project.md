@@ -85,3 +85,101 @@ setInterval(()=>{
 }, 1000)
 
 ```
+## Project 4 (Guessing Number)
+
+```javascipt
+let userInputGuessNumber = document.querySelector("#guessField")
+
+const submit = document.querySelector("#subt")
+
+const prevGuessesSlot = document.querySelector(".guesses")
+
+const remainingGuess = document.querySelector('.lastResult')
+
+const lowOrHigh = document.querySelector('.lowOrHi')
+
+const startOver = document.querySelector(".resultParas")
+
+let randomNumber = Math.floor(Math.random() * 100 + 1)
+const wrapper = document.getElementById('wrapper')
+const div = document.createElement('div')
+
+let prevGuess = []
+let playGame
+let numGuess = 1
+
+if (playGame) {
+  submit.addEventListener('click', (e) => {
+    e.preventDefault()
+    const inputValue = userInputGuessNumber.value
+    guessValitaion(inputValue)
+  })
+}
+
+
+function guessValitaion(guess) {
+  if (isNaN(guess) || guess === "" || guess === " ") {
+    alert("Please Enter Valid Number")
+  } else if (guess < 0) {
+    alert("Please Enter a Number greater than 0")
+  } else if (guess > 100) {
+    alert("please Enter a Number smaller than 100")
+  } else {
+    prevGuess.push(guess)
+    if (numGuess === 9) {
+      displayGuess(guess)
+      displayMsg(`Failed to Guess Number. Correct Number: ${randomNumber}`)
+      endGame()
+    } else {
+      displayGuess(guess)
+      guessChecker(guess)
+    }
+  }
+}
+
+function guessChecker(guess) {
+  if (guess > randomNumber) {
+    displayMsg(`Your guess Number ${guess} tooo Greater`)
+  } else if (guess < randomNumber) {
+    displayMsg(`Your guess Number ${guess} tooo smaller`)
+  } else {
+    displayMsg(`Your guess Number ${guess} is Correct`)
+    endGame()
+  }
+}
+
+function displayGuess(guess) {
+  userInputGuessNumber.value = ""//clearing value 
+  prevGuessesSlot.innerHTML += `  ${guess}, `
+  numGuess++;
+  remainingGuess.innerHTML = `${10 - numGuess}`
+}
+
+function displayMsg(msg) {
+  lowOrHigh.innerHTML = `${msg}`
+}
+
+function endGame() {
+  userInputGuessNumber.value = ""
+  userInputGuessNumber.setAttribute('disabled', "")
+  div.classList.add('btn')
+  div.innerHTML = `<button id="newGame">Start New game</button>`
+  startOver.appendChild(div);
+  playGame = false;
+  startGame()
+}
+
+function startGame() {
+  const newGame = document.getElementById('newGame')
+  newGame.addEventListener('click', (e) => {
+    randomNumber = parseInt(Math.random() * 100 + 1)
+    prevGuess = []
+    numGuess = 1
+    prevGuessesSlot.innerHTML = ""
+    remainingGuess.innerHTML = `${10 - numGuess}`
+    userInputGuessNumber.removeAttribute('disabled')
+    startOver.removeChild(div)
+    playGame = true
+  })
+}
+```
