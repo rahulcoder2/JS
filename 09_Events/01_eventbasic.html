@@ -39,6 +39,7 @@
             id="owl"
             src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
             alt=""
+            onclick="alert('owl 1 way to use event but not recomended to use because it give limit access')"
           />
         </li>
         <li>
@@ -58,6 +59,17 @@
     </div>
   </body>
   <script>
+    // Note : all event that happen inside js run in sequentially
+
+    // way to access event 
     
+    // 1 way goto line 42
+
+    // 2 way 
+    document.getElementById("owl").onclick(alert('2 way not recomended it also give limit access'))
+    
+    // 3 way to use event 
+
+    document.getElementById("owl").addEventListener()
   </script>
 </html>
