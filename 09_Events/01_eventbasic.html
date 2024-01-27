@@ -39,7 +39,6 @@
             id="owl"
             src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
             alt=""
-            onclick="alert('owl 1 way to use event but not recomended to use because it give limit access')"
           />
         </li>
         <li>
@@ -61,15 +60,137 @@
   <script>
     // Note : all event that happen inside js run in sequentially
 
-    // way to access event 
-    
-    // 1 way goto line 42
+    // way to access event
 
-    // 2 way 
-    document.getElementById("owl").onclick(alert('2 way not recomended it also give limit access'))
-    
-    // 3 way to use event 
+    // 1 way write inside line 42
 
-    document.getElementById("owl").addEventListener()
+    // onclick="alert('owl 1 way to use event but not recomended to use because it give limit access')"
+
+    // 2 way
+    // document.getElementById("owl").onclick(alert('2 way not recomended it also give limit access'))
+
+    // 3 way to use event
+
+    // document.getElementById("owl").addEventListener('click', function (e) {
+    //   alert("3 way recomended from js stand")
+    // })
+
+    // 4 way which old way
+    // attachEvent() // not recomended
+
+    // Note: to study in event
+    /*
+      1. type
+        i. type of keyboard, mouse
+
+      2. Timestamp
+        i. how to change time date etc
+
+      3. defaultPrevent
+        i. Change the  default behavior of form other
+
+      4. target
+
+      5. toElement
+
+      6. srcElement
+
+      7. currentTarget
+
+      8. scrrenX, screenY, clientX, clientY
+
+      9. altKey, ctrlKey, shiftKey, keyCode
+    */
+
+    // let see how addEventListener work,type
+
+    // default access (eveent bubbly)
+    // document.getElementById("owl").addEventListener('click', function (e) {
+    //   console.log(e)
+    // },false)
+
+    // Note: also know button to top approched
+
+    // foreg uncomment both to see clear picture who it work
+
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("click in ul element");
+    //   },
+    //   false
+    // );
+
+    // document.getElementById("owl").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("Click in owl element")
+    //   },
+    //   false
+    // );
+
+    // event Propagation (event capturing)
+
+    // document.getElementById("owl").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log(e);
+    //   },
+    //   true
+    // );
+
+    // Note: also know top to button approched
+
+    // foreg uncomment both to see clear picture who it work
+
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("click in ul element");
+    //   },
+    //   true
+    // );
+
+    // document.getElementById("owl").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("Click in owl element")
+    //    },
+    //   true
+    // );
+
+    // let see how stop bubbling upward
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("click in ul element");
+    //   },
+    //   false
+    // );
+
+    // document.getElementById("owl").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("Click in owl element")
+    //     e.stopPropagation()
+    //   },
+    //   false
+    // );
+
+    //  let see real world  scenario
+    /*
+      QN: let assume you want to hidden image while clicking in li in event 
+    */
+
+    const images = document.querySelector("#images");
+    images.addEventListener("click", (e) => {
+      console.log(e.target.parentNode); // use reference
+      if (e.target.tagNam === "IMG") {
+        let removeLi = e.target.parentNode;
+        removeLi.remove();// 1 way to remove
+        // removeLi.parentNode.removeChild(removeLi)
+      }
+
+    });
   </script>
 </html>
