@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>first Example of Async-setTimeout</title>
+  </head>
+  <body style="background-color: #101010">
+    <button id="button">Stop</button>
+    <h1 style="color: #fff">Hello world</h1>
+    <script>
+
+      const button = document.getElementById('button')
+
+      //  add setTimeout function
+
+      // Note: it help to change setTime in different variable and function
+
+
+      // setTimeout(() => {
+      //     console.log("Set TimeOut 2 sec")
+      // }, 2000);
+
+      // function PrintAfter3sec(){
+      //     console.log("after 3 second")
+      // }
+      // setTimeout(PrintAfter3sec, 3000)
+
+      // let see real example
+
+      // Note : Not to use because it will not change
+
+      // function createDiv (){
+      //    const div = document.createElement('div')
+      //     div.appendChild(document.createTextNode("Hello world"))
+      //     div.style.color = "#fff"
+      //     document.body.appendChild(div)
+      // }
+
+      // const myDiv = setTimeout(
+      //     createDiv, 3000
+      // )
+
+      // Lets check if clearTimeout can remove div from clearTimeout, it will not remove but it will stop setTimeOut
+
+      // button.addEventListener('click',()=>{
+      //      clearTimeout(myDiv)
+      //     console.log("clear")
+      // })
+
+      
+      // Now let see how setTimeout work to change data, first let take declear h1 tag
+
+
+      const changeText = function() {
+        
+       const h1= document.querySelector('h1')
+        h1.innerHTML = "This is Change letter of Hello world after 2 sec"
+      }
+
+      const changeMe = setTimeout(changeText,4000)
+
+    //   now let see how to clear setTimeout 
+
+      /*
+        Note:
+            1.remember to add variable to setTimeout
+            2.it will only clearTimeout before SetTimeout mean if you have setTimeout 2 sec than you have to clearTimeout before 2 sec otherwise it will executed. and no going back
+      */
+
+    button.addEventListener('click', ()=>{
+        clearTimeout(changeMe)
+        console.log("Clear");
+    })
+    </script>
+  </body>
+</html>
