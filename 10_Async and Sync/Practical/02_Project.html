@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Learning setInterval
+    </h1>
+    <button type="button" id="start">Start</button>
+    <button type="button" id="stop">Stop</button>
+    <script>
+    
+        // first let see interval way
+        
+        // setInterval(() => {
+            
+        // }, 100);
+
+        // function name (say){
+        //     console.log(say, Date.now)
+        // }
+
+        // const interval = setInterval(name, 1000, "Rahul")
+
+        // clearInterval(interval)
+
+        // let see if we click start it start to print name and stop it will stop
+
+
+        const start = document.querySelector("#start")
+        const Stop = document.querySelector("#stop")
+        let Interval;
+
+        start.addEventListener('click', ()=>{
+            const userName = function (){
+                console.log("Rahul",Date.now())
+            }
+
+             Interval = setInterval(userName,1000)
+        })
+
+        Stop.addEventListener('click', ()=>{
+            clearInterval(Interval)
+        })
+    </script>
+</body>
+</html>
