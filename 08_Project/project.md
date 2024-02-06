@@ -2,10 +2,7 @@
 
 ## Project Link
 
-
-
 [Click Here](https://stackblitz.com/edit/dom-project-chaiaurcode?file=index.html)
-
 
 [project made By hiteshchoudhary](https://github.com/hiteshchoudhary)
 
@@ -46,7 +43,7 @@ buttons.forEach((button) =>
 ```Javascipt
 const form = document.querySelector('form');
 
-// usecase when need empty value 
+// usecase when need empty value
 
 //const height = parseInt(document.querySelector('#height').value);
 
@@ -78,13 +75,13 @@ form.addEventListener('submit', (e) => {
 ## Project 3 (DigitalClock)
 
 ```javascript
-const clock = document.querySelector("#clock")
-setInterval(()=>{
-  let time = new Date()
-  clock.innerHTML = time.toLocaleTimeString()
-}, 1000)
-
+const clock = document.querySelector("#clock");
+setInterval(() => {
+  let time = new Date();
+  clock.innerHTML = time.toLocaleTimeString();
+}, 1000);
 ```
+
 ## Project 4 (Guessing Number)
 
 ```javascipt
@@ -149,7 +146,7 @@ function guessChecker(guess) {
 }
 
 function displayGuess(guess) {
-  userInputGuessNumber.value = ""//clearing value 
+  userInputGuessNumber.value = ""//clearing value
   prevGuessesSlot.innerHTML += `  ${guess}, `
   numGuess++;
   remainingGuess.innerHTML = `${10 - numGuess}`
@@ -182,4 +179,45 @@ function startGame() {
     playGame = true
   })
 }
+```
+
+##Project 5 (Keybord key)
+
+```javascript
+
+```
+
+##Project 6 (Color Changer infinity)
+
+```javascript
+const Stop = document.querySelector("#stop");
+const Start = document.querySelector("#start");
+let intervalId;
+
+const randomColorGenerate = function () {
+  const hex = "0123456789ABCDEF";
+  let color = "#";
+  for (i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+const startChangingColor = () => {
+  if (!intervalId) {
+    intervalId = setInterval(changebgColor, 1000);
+  }
+
+  function changebgColor() {
+    document.body.style.backgroundColor = randomColorGenerate();
+  }
+};
+
+const stopChangingColor = () => {
+  clearInterval(intervalId);
+  intervalId = null;
+};
+
+Start.addEventListener("click", startChangingColor);
+Stop.addEventListener("click", stopChangingColor);
 ```
